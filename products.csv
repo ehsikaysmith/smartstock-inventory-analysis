@@ -1,0 +1,41 @@
+product_id,product_name,category,supplier,unit_cost,suggested_unit_price
+P001,Rice 5kg,Groceries,Tema Supply Hub,69.78,88.45
+P002,Cooking Oil 1L,Groceries,Westline Distributors,26.85,41.24
+P003,Tomato Paste,Groceries,Harbour Goods Co,74.01,95.17
+P004,Canned Sardines,Groceries,Coastal Wholesale Ltd,23.59,32.64
+P005,Spaghetti 500g,Groceries,Harbour Goods Co,39.25,48.65
+P006,Milk Powder,Groceries,Harbour Goods Co,24.83,36.39
+P007,Breakfast Cereal,Groceries,Coastal Wholesale Ltd,158.12,207.64
+P008,Bottled Water,Groceries,Tema Supply Hub,128.67,211.28
+P009,Tea Bags,Groceries,Harbour Goods Co,31.48,48.87
+P010,Peanut Butter,Groceries,Golden Basket Traders,92.31,119.38
+P011,Laundry Detergent,Household,Coastal Wholesale Ltd,102.07,142.94
+P012,Dishwashing Liquid,Household,Golden Basket Traders,87.36,122.43
+P013,Toilet Tissue Pack,Household,Golden Basket Traders,172.61,253.89
+P014,Bleach 1L,Household,Coastal Wholesale Ltd,86.35,122.69
+P015,Floor Cleaner,Household,Tema Supply Hub,18.25,27.28
+P016,Bath Soap Pack,Household,Harbour Goods Co,108.08,156.6
+P017,Kitchen Towels,Household,Golden Basket Traders,87.24,112.66
+P018,Garbage Bags,Household,Coastal Wholesale Ltd,21.49,30.15
+P019,Air Freshener,Household,Harbour Goods Co,97.24,122.46
+P020,Sponge Pack,Household,Westline Distributors,70.88,108.86
+P021,Body Lotion,Personal Care,Harbour Goods Co,9.82,12.53
+P022,Shampoo 400ml,Personal Care,Coastal Wholesale Ltd,70.06,101.68
+P023,Toothpaste,Personal Care,Tema Supply Hub,147.16,237.85
+P024,Toothbrush Pack,Personal Care,Coastal Wholesale Ltd,85.42,104.42
+P025,Deodorant,Personal Care,Coastal Wholesale Ltd,56.17,86.93
+P026,Sanitary Pads,Personal Care,Coastal Wholesale Ltd,154.41,192.62
+P027,Hand Sanitiser,Personal Care,Golden Basket Traders,178.05,234.73
+P028,Petroleum Jelly,Personal Care,Golden Basket Traders,112.49,173.52
+P029,Hair Conditioner,Personal Care,Golden Basket Traders,148.38,222.45
+P030,Face Wash,Personal Care,Tema Supply Hub,12.37,14.32
+P031,A4 Paper Ream,Stationery,Tema Supply Hub,103.97,171.01
+P032,Ballpoint Pens Pack,Stationery,Harbour Goods Co,43.88,61.96
+P033,Exercise Books Pack,Stationery,Tema Supply Hub,49.96,69.82
+P034,Markers Pack,Stationery,Westline Distributors,72.31,92.22
+P035,Stapler,Stationery,Golden Basket Traders,17.78,28.97
+P036,Sticky Notes,Stationery,Harbour Goods Co,48.5,70.94
+P037,Envelope Pack,Stationery,Westline Distributors,146.77,228.89
+P038,Pencils Pack,Stationery,Golden Basket Traders,72.07,86.34
+P039,File Folders,Stationery,Tema Supply Hub,100.78,159.28
+P040,Calculator,Stationery,Coastal Wholesale Ltd,139.83,190.76
