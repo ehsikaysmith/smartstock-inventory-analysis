@@ -1,3 +1,9 @@
+-- SmartStock Data Analysis
+-- Project: SmartStock Inventory and Sales Analysis
+-- Purpose: Analyze sales performance, product profitability,
+-- inventory replenishment, and data quality.
+-- Tool: MySQL Workbench
+
 USE smartstock_db;
 
 -- 1. Check the number of records in each table
