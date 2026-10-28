@@ -113,3 +113,82 @@ Conclusion
 SmartStock demonstrates how Python-based data cleaning, exploratory analysis, and visualisation can transform raw sales and inventory data into practical business insights.
 
 This project forms part of my data analytics portfolio as I continue developing my skills in Python, SQL, and cloud technologies.
+
+
+## AWS Cloud Data Pipeline
+
+### Overview
+
+SmartStock was extended to demonstrate a cloud-based data engineering workflow using Amazon Web Services (AWS). The pipeline stores raw sales data in Amazon S3, processes and cleans it with AWS Glue, saves the output in Parquet format, and makes the processed data available for SQL analysis through Amazon Athena.
+
+### Architecture
+
+```text
+Raw CSV Files
+     |
+     v
+Amazon S3 — Raw Data
+     |
+     v
+AWS Glue ETL Job
+(smartstock-sales-etl)
+     |
+     v
+Data Cleaning and Validation
+     |
+     v
+Amazon S3 — Processed Data
+(Parquet format)
+     |
+     v
+AWS Glue Data Catalog
+     |
+     v
+Amazon Athena
+(SQL queries and validation)
+```
+
+### AWS Services Used
+
+- **Amazon S3:** Stores the original CSV files and the processed Parquet output in separate locations.
+- **AWS Glue ETL:** Reads the raw sales data, removes exact duplicate rows, filters records with missing required fields, and excludes records with non-positive quantities.
+- **AWS Glue Data Catalog:** Stores table metadata for querying the processed dataset.
+- **Amazon Athena:** Executes SQL queries against the processed data stored in S3.
+
+### Data Storage
+
+The project uses the following S3 locations:
+
+- Raw sales data: `s3://smartstock-data-lake-2026-gh/raw/sales/sales.csv`
+- Processed sales data: `s3://smartstock-data-lake-2026-gh/processed/sales/`
+
+The processed dataset is stored in Parquet format, a columnar file format suitable for analytical workloads.
+
+### Validation Results
+
+The processed dataset was queried successfully in Amazon Athena.
+
+| Validation check | Result |
+|---|---:|
+| Raw sales rows | 1,205 |
+| Processed sales rows | 1,194 |
+| Unique sale-line IDs | 1,194 |
+| Non-positive quantities | 0 |
+
+The processed row count and validation results were confirmed using Athena SQL queries.
+
+### Technical Notes and Limitations
+
+- The processed table uses column types compatible with the generated Parquet files. The `sale_line_id` and `order_date` columns are exposed as strings, while `quantity` is exposed as a bigint.
+- The raw CSV tables remain separate from the processed Parquet table.
+- The pipeline currently processes the sales dataset. The products and inventory datasets are catalogued separately and can be incorporated into future processing workflows.
+- This is a portfolio project. The results demonstrate the tested workflow and should not be interpreted as evidence of production-scale performance or cost savings.
+- AWS usage may incur charges depending on service usage and applicable credits or pricing.
+
+### Future Improvements
+
+- Automate pipeline execution and monitor job failures.
+- Add automated data-quality checks and reconciliation between Python, SQL, and Athena results.
+- Extend the ETL pipeline to process products and inventory data.
+- Add cost monitoring and document the project's security and access-control configuration.
+
