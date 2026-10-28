@@ -150,7 +150,7 @@ Amazon Athena
 
 ### AWS Services Used
 
-- **Amazon S3:** Stores the original CSV files and the processed Parquet output in separate locations.
+- **Amazon S3:** Stores the original CSV files and processed Parquet output in separate locations.
 - **AWS Glue ETL:** Reads the raw sales data, removes exact duplicate rows, filters records with missing required fields, and excludes records with non-positive quantities.
 - **AWS Glue Data Catalog:** Stores table metadata for querying the processed dataset.
 - **Amazon Athena:** Executes SQL queries against the processed data stored in S3.
@@ -174,8 +174,12 @@ The processed dataset was queried successfully in Amazon Athena.
 | Processed sales rows | 1,194 |
 | Unique sale-line IDs | 1,194 |
 | Non-positive quantities | 0 |
+| Total revenue | GH₵639,284.34 |
+| Total cost | GH₵449,064.33 |
+| Total profit | GH₵190,220.01 |
+| Profit margin | 29.76% |
 
-The processed row count and validation results were confirmed using Athena SQL queries.
+The processed row count, data-quality checks, and financial calculations were validated using Athena SQL queries. Revenue, cost, profit, and profit margin matched the results from the Python analysis.
 
 ### Technical Notes and Limitations
 
@@ -191,4 +195,3 @@ The processed row count and validation results were confirmed using Athena SQL q
 - Add automated data-quality checks and reconciliation between Python, SQL, and Athena results.
 - Extend the ETL pipeline to process products and inventory data.
 - Add cost monitoring and document the project's security and access-control configuration.
-
