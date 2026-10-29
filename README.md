@@ -209,3 +209,37 @@ The processed row count, data-quality checks, and financial calculations were va
 - Add automated data-quality checks and reconciliation between Python, SQL, and Athena results.
 - Extend the ETL pipeline to process products and inventory data.
 - Add cost monitoring and document the project's security and access-control configuration.
+
+## Reproducing the AWS Pipeline
+
+### Prerequisites
+
+- An AWS account with appropriate permissions for Amazon S3, AWS Glue, and Amazon Athena.
+- The SmartStock raw sales CSV file.
+- An AWS Glue job configured to read the raw CSV data and write processed Parquet data.
+
+### Pipeline Steps
+
+1. **Upload the raw data:** Store the sales CSV file in Amazon S3 at `s3://smartstock-data-lake-2026-gh/raw/sales/sales.csv`.
+
+2. **Run the ETL job:** Run the AWS Glue job named `smartstock-sales-etl`. The job removes exact duplicate rows, filters records with missing required fields, and excludes records with zero or negative quantities.
+
+3. **Store the processed data:** The job writes the cleaned dataset in Parquet format to `s3://smartstock-data-lake-2026-gh/processed/sales/`.
+
+4. **Query the processed data:** Use the AWS Glue Data Catalog and Amazon Athena to query the processed table, `smartstock_db.sales_processed`.
+
+5. **Validate the output:** Run SQL queries to check the processed row count, unique sale-line IDs, non-positive quantities, revenue, cost, profit, and profit margin.
+
+### Expected Validation Results
+
+| Validation check | Expected result |
+|---|---:|
+| Processed rows | 1,194 |
+| Unique sale-line IDs | 1,194 |
+| Non-positive quantities | 0 |
+| Total revenue | GH₵639,284.34 |
+| Total cost | GH₵449,064.33 |
+| Total profit | GH₵190,220.01 |
+| Profit margin | 29.76% |
+
+**Note:** These results reflect the dataset and configuration tested in this project. Re-running the pipeline with different source data or settings may produce different results. AWS resource names, permissions, and region-specific configuration may need to be adjusted for another account.
