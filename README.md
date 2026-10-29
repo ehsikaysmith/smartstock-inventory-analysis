@@ -102,7 +102,23 @@ Use data for planning: Combine sales performance and inventory insights when mak
 
 Project Structure
 
-The project contains sales, product, and inventory datasets, alongside Jupyter notebooks documenting the analysis, findings, and recommendations.
+The project is organised into datasets, analysis notebooks, SQL queries, and AWS Glue ETL code.
+
+```text
+Smartstock Project/
+├── data/
+│   └── raw/
+│       ├── sales.csv
+│       ├── products.csv
+│       └── inventory.csv
+├── notebook/
+│   └── SmartStock analysis notebook
+├── scripts/
+│   └── aws_glue_sales_etl.py
+├── sql/
+│   └── SQL analysis queries
+└── README.md
+```
 
 Limitations
 
